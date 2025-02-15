@@ -44,3 +44,21 @@ function atualizarLista() {
         ul.appendChild(li);
     });
 }
+
+function removerAmigo(index) {
+    listaAmigos.splice(index, 1);
+    atualizarLista();
+}
+
+function sortearAmigo() {
+    if (listaAmigos.length === 0) {
+        alert("Adicione pelo menos um nome antes de sortear.");
+        return;
+    }
+    
+    let indiceSorteado = Math.floor(Math.random() * listaAmigos.length);
+    let amigoSorteado = listaAmigos[indiceSorteado];
+    
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<li>O amigo secreto sorteado é: <strong>${amigoSorteado}</strong></li>`;
+}
